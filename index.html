@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+  />
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<input class="all-money" type="text">
+    <h1>Підрахунок ЗП</h1>
+    <div>
+<input class="all-money" type="text" autofocus>
 <button class="calc-total">Додати</button>
+    </div>
 <p class="total">Сума = <span class="total-num">0</span></p>
+<label>
+    <input type="radio" name="percent" value="30" />
+    30%
+  </label>
+  <label>
+    <input type="radio" name="percent" value="35"/>
+    35%
+  </label>
+<button class="clean">Очистити</button>
+<p>Кількість занять в місяці</p>
+
 <script src="js/main.js" type="module"></script>
 </body>
 </html>

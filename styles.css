@@ -1,10 +1,26 @@
+body {
+    padding: 15px;
+}
+
 .all-money {
     font-size: 14px;
     width: 800px;
-    height: 25px;
+    height: 30px;
 }
 
-.calc-total {
+.calc-total,
+.clean{
     width: 100px;
     height: 30px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color:lightskyblue;
+}
+
+.total {
+   display: inline-block;
+   width: 150px;
+   padding: 5px;
+   margin-right: 20px;
+   border: 2px solid rgb(171, 211, 208);
 }
