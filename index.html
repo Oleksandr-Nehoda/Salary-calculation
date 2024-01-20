@@ -11,22 +11,26 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Підрахунок ЗП</h1>
-    <h2 class="name-group">Група</h2>
+    <h1 class="title">Підрахунок ЗП</h1>
+    <button class="clean" type="button">Очистити</button>
+
+    <div>
+        <h2 class="name-group">Група</h2>
     <select class="select-group" name="groups">
-        <option value="Пн17">Пн 17:00</option>
-        <option value="Вт15">Вт 15:30</option>
-        <option value="Вт18">Вт 18:00</option>
-        <option value="Ср18">Ср 18:00</option>
-        <option value="Чт15">Чт 15:30</option>
-        <option value="Сб11">Сб 11:30</option>
-        <option value="Сб14">Сб 14:00</option>
-        <option value="Сб17">Сб 17:00</option>
+        <option value="Пн 17:00">Пн 17:00</option>
+        <option value="Вт 15:30">Вт 15:30</option>
+        <option value="Вт 18:00">Вт 18:00</option>
+        <option value="Ср 18:00">Ср 18:00</option>
+        <option value="Чт 15:30">Чт 15:30</option>
+        <option value="Сб 11:30">Сб 11:30</option>
+        <option value="Сб 14:00">Сб 14:00</option>
+        <option value="Сб 17:00">Сб 17:00</option>
       </select>
+    </div>
       
     <div>
 <input class="all-money" type="text" autofocus>
-<button class="calc-total">Додати</button>
+<button class="calc-total" type="button">Додати</button>
     </div>
 <p class="total">Сума = <span class="total-num">0</span></p>
 <label>
@@ -39,7 +43,7 @@
   </label>
 
   <p>Ко-тренерські = <span class="sum-ko-tr">0</span></p>
-  <select class="select-ko-lesson" name="amount">
+  <select class="select-ko-lesson">
     <option value="0">0 Занять</option>
     <option value="1">1 Заняття</option>
     <option value="2">2 Заняття</option>
@@ -58,12 +62,46 @@
   </label>
 <p>Вартість одного заняття = <span class="cost-lesson">0</span></p>
 
-<label>
-    Дата пропуску заняття
-    <input class="missed-date" type="date" />
-  </label>
+<p>Кількість пропусків занять:</p>
+<select class="select-missed-lesson">
+    <option value="0">0 Занять</option>
+    <option value="1">1 Заняття</option>
+    <option value="2">2 Заняття</option>
+    <option value="3">3 Заняття</option>
+  </select>
 
-  <button class="clean">Очистити</button>
+  <div class="wrapper-date"></div>
+
+  <button class="create-table">Побудувати таблицю</button>
+
+  <div class="wrapper-table"></div>
+
+  <!-- <table>
+    <thead>
+        <tr>
+            <th colspan="2">Пн17:00</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Кураторські</td>
+            <td>"money"</td>
+        </tr>
+        <tr>
+            <td>Ко-тренерські</td>
+            <td>"money"</td>
+        </tr>
+        <tr>
+            <td>Пропуск</td>
+            <td>"money"</td>
+        </tr>
+        <tr>
+            <td>Всього:</td>
+            <td>"money"</td>
+        </tr>
+    </tbody>
+
+  </table> -->
 
 <script src="js/main.js" type="module"></script>
 </body>

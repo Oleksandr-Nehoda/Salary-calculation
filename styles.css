@@ -2,6 +2,10 @@ body {
     padding: 15px;
 }
 
+.title{
+    display: inline-block;
+}
+
 .all-money {
     font-size: 14px;
     width: 800px;
@@ -9,12 +13,17 @@ body {
 }
 
 .calc-total,
-.clean{
-    width: 100px;
+.clean,
+.create-table{
+    padding: 0 20px;
     height: 30px;
     margin-left: 10px;
     border-radius: 5px;
     background-color:lightskyblue;
+}
+
+.create-table{
+margin-top: 20px;
 }
 
 .total {
@@ -27,4 +36,14 @@ body {
 
 .name-group{
     display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+  }
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #2a2a2a;
 }
