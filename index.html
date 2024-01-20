@@ -12,6 +12,18 @@
 </head>
 <body>
     <h1>Підрахунок ЗП</h1>
+    <h2 class="name-group">Група</h2>
+    <select class="select-group" name="groups">
+        <option value="Пн17">Пн 17:00</option>
+        <option value="Вт15">Вт 15:30</option>
+        <option value="Вт18">Вт 18:00</option>
+        <option value="Ср18">Ср 18:00</option>
+        <option value="Чт15">Чт 15:30</option>
+        <option value="Сб11">Сб 11:30</option>
+        <option value="Сб14">Сб 14:00</option>
+        <option value="Сб17">Сб 17:00</option>
+      </select>
+      
     <div>
 <input class="all-money" type="text" autofocus>
 <button class="calc-total">Додати</button>
@@ -25,8 +37,33 @@
     <input type="radio" name="percent" value="35"/>
     35%
   </label>
-<button class="clean">Очистити</button>
-<p>Кількість занять в місяці</p>
+
+  <p>Ко-тренерські = <span class="sum-ko-tr">0</span></p>
+  <select class="select-ko-lesson" name="amount">
+    <option value="0">0 Занять</option>
+    <option value="1">1 Заняття</option>
+    <option value="2">2 Заняття</option>
+    <option value="3">3 Заняття</option>
+    <option value="4">4 Заняття</option>
+    <option value="5">5 Занять</option>
+  </select>
+<p>Кількість занять в місяці:</p>
+<label>
+    <input type="radio" name="quantity" value="4" />
+    4
+  </label>
+  <label>
+    <input type="radio" name="quantity" value="5"/>
+    5
+  </label>
+<p>Вартість одного заняття = <span class="cost-lesson">0</span></p>
+
+<label>
+    Дата пропуску заняття
+    <input class="missed-date" type="date" />
+  </label>
+
+  <button class="clean">Очистити</button>
 
 <script src="js/main.js" type="module"></script>
 </body>
