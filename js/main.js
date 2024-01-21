@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from '../node_modules/uuid/dist/esm-browser/index.js';
+
 const refInp = document.querySelector(".all-money");
 const refButSum = document.querySelector(".calc-total");
 const refSpanSum = document.querySelector(".total-num");
@@ -12,8 +14,9 @@ const refSelectGroup = document.querySelector(".select-group");
 const refSelectLesson = document.querySelector(".select-ko-lesson");
 const refSelectMissedLesson = document.querySelector(".select-missed-lesson");
 const refWrapperDates = document.querySelector(".wrapper-date");
-const refBtnCreateTable = document.querySelector('.create-table')
+const refBtnCreateTable = document.querySelector('.create-table');
 const refWrapperTable = document.querySelector(".wrapper-table");
+const refTotalIncome = document.querySelector('.total-income');
 
 let group = "Пн 17:00";
 let inpValue = "";
@@ -25,6 +28,7 @@ let missedDate2 = "";
 let missedDate3 = "";
 let costOneLes = 0;
 let costAllLes = 0;
+let totalIncome = 0;
 const costKoTrainer = 200;
 console.log(`sum - ${sum}`);
 
@@ -197,8 +201,15 @@ const handleSelectMissedDate = (event) => {
 };
 
 const handleClickCreateTable = () => {
+
+    const id = uuidv4()
+    const income = percent + koTrainer - costAllLes;
+    console.log(`income - ${income}`);
+    totalIncome += income
+    refTotalIncome.textContent = totalIncome
+    console.log(`totalIncome - ${totalIncome}`);
     const markup1 = `
-    <div class='a${percent}'>
+    <div id='a${id}'>
     <table>
     <thead>
         <tr>
@@ -231,10 +242,10 @@ const markup22 = `<tr>
 </tr>`
 const markup3 = `<tr>
 <td>Всього:</td>
-<td>${percent + koTrainer - costAllLes}</td>
+<td>${income}</td>
 </tr>
 </table>
-<button class='a${percent}' type="button">Видалити</button>
+<button class='a${id}' type="button">X</button>
 </div>`
 if (!missedDate1) {
     refWrapperTable.insertAdjacentHTML("beforeend", markup1 + markup3)
@@ -249,9 +260,11 @@ if (missedDate1 && missedDate2 && missedDate3) {
     refWrapperTable.insertAdjacentHTML("beforeend", markup1 + markup2 + markup21 + markup22 + markup3)
 } 
 
-const refBoxTable = document.querySelector(`.a${percent}`);
-const refBtnRemoveTable = document.querySelector(`.a${percent}`);
+const refBoxTable = document.querySelector(`#a${id}`);
+const refBtnRemoveTable = document.querySelector(`.a${id}`);
 refBtnRemoveTable.addEventListener('click', () => {
+    totalIncome -= income;
+    refTotalIncome.textContent = totalIncome
     refBoxTable.remove();
 })
 }
