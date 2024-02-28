@@ -1,3 +1,7 @@
+ 
+let arr = [1, 2, 3];
+
+console.dir(`arr - ${arr.at(-1)}`);
 import { v4 as uuidv4 } from '../node_modules/uuid/dist/esm-browser/index.js';
 
 const refInp = document.querySelector(".all-money");
@@ -32,6 +36,7 @@ let totalIncome = 0;
 const costKoTrainer = 200;
 console.log(`sum - ${sum}`);
 
+
 const handleChangeGroup = (event) => {
   group = event.currentTarget.value;
 };
@@ -53,8 +58,6 @@ const handleClickSum = () => {
   for (const num of newArray) {
     sum += num;
   }
-
-  console.log(`newArray- ${newArray}`);
   refSpanSum.textContent = sum;
 };
 
@@ -98,14 +101,12 @@ const handleChangePercent = (event) => {
 
 const handleChangeQuantity = (event) => {
   if (event.currentTarget.checked && event.currentTarget.value === "4") {
-    const costOneLesson = Math.round(percent / 4);
-    costOneLes = costOneLesson;
-    refSpanCost.textContent = costOneLesson;
+    costOneLes = Math.round(percent / 4);
+    refSpanCost.textContent = costOneLes;
   }
   if (event.currentTarget.checked && event.currentTarget.value === "5") {
-    const costOneLesson = Math.round(percent / 5);
-    costOneLes = costOneLesson;
-    refSpanCost.textContent = costOneLesson;
+    costOneLes = Math.round(percent / 5);
+    refSpanCost.textContent = costOneLes;
   }
 };
 
@@ -158,11 +159,6 @@ const handleChangeDate = (index, event) => {
     default:
       break;
   }
-
-  console.log(`missedDate1 - ${missedDate1}`);
-  console.log(`missedDate2 - ${missedDate2}`);
-  console.log(`missedDate3 - ${missedDate3}`);
-  console.log(`index - ${index}`);
 };
 
 const handleSelectMissedDate = (event) => {
@@ -202,12 +198,10 @@ const handleSelectMissedDate = (event) => {
 
 const handleClickCreateTable = () => {
 
-    const id = uuidv4()
+    const id = uuidv4();
     const income = percent + koTrainer - costAllLes;
-    console.log(`income - ${income}`);
-    totalIncome += income
-    refTotalIncome.textContent = totalIncome
-    console.log(`totalIncome - ${totalIncome}`);
+    totalIncome += income;
+    refTotalIncome.textContent = totalIncome;
     const markup1 = `
     <div id='a${id}'>
     <table>
@@ -264,7 +258,7 @@ const refBoxTable = document.querySelector(`#a${id}`);
 const refBtnRemoveTable = document.querySelector(`.a${id}`);
 refBtnRemoveTable.addEventListener('click', () => {
     totalIncome -= income;
-    refTotalIncome.textContent = totalIncome
+    refTotalIncome.textContent = totalIncome;
     refBoxTable.remove();
 })
 }
