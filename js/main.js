@@ -93,8 +93,8 @@ const handleChangePercent = (event) => {
     percent = Math.ceil(sum * 0.3);
     refSpanSum.textContent = percent;
   }
-  if (event.currentTarget.checked && event.currentTarget.value === "35") {
-    percent = Math.ceil(sum * 0.35);
+  if (event.currentTarget.checked && event.currentTarget.value === "40") {
+    percent = Math.ceil(sum * 0.4);
     refSpanSum.textContent = percent;
   }
 };
